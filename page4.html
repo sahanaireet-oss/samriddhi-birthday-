@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Samriddhi - Page 4</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .options-group {
+            gap: 18px !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div>
+            <div class="header-tag">Gift Choice 🎁</div>
+            <p class="note">Forget it. Now select what gift do you want? 🎁🎀. You have to select else I'll get really angry 😤😁. You can select more than one 👍🏻. Choose wisely Hakka no Togame.😁</p>
+
+            <div class="options-group">
+                <label class="option-label">
+                    <input type="checkbox" name="gift" value="1. A cool anime keychain🔑⛓️">
+                    1. A cool anime keychain🔑⛓️
+                </label>
+                <label class="option-label">
+                    <input type="checkbox" name="gift" value="2. My book (you have to return it after reading)📖">
+                    2. My book (you have to return it after reading)📖
+                </label>
+                <label class="option-label">
+                    <input type="checkbox" name="gift" value="3. A cool hot wheels 🏎️">
+                    3. A cool hot wheels 🏎️
+                </label>
+                <label class="option-label">
+                    <input type="checkbox" name="gift" value="4. A hand written note by me😁">
+                    4. A hand written note by me😁
+                </label>
+                <label class="option-label">
+                    <input type="checkbox" name="gift" value="5. I will listen anything that you will say on 5th Oct🙂‍↔️🥱">
+                    5. I will listen anything that you will say on 5th Oct🙂‍↔️🥱
+                </label>
+            </div>
+        </div>
+
+        <div class="bottom-left-container">
+            <button class="btn-next" onclick="saveGiftAndNext()">Next ➔</button>
+        </div>
+    </div>
+
+    <script>
+        function saveGiftAndNext() {
+            const selectedBoxes = document.querySelectorAll('input[name="gift"]:checked');
+            const checkedGifts = Array.from(selectedBoxes).map(box => box.value);
+            
+            if (checkedGifts.length === 0) {
+                alert("Please select at least one option! 😤");
+                return;
+            }
+            
+            localStorage.setItem('samriddhiSelectedGift', checkedGifts.join(' + '));
+            window.location.href = "page5.html";
+        }
+    </script>
+
+</body>
+</html>
