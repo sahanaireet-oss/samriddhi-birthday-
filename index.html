@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Samriddhi - Page 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="card">
+        <div>
+            <div class="header-tag">For Samriddhi ❤️</div>
+            <p class="note">I know you are angry but listen to me.... I am sorry for being rude and bothering you. This is a small website that I made for your birthday. I hope you like this😁</p>
+            
+            <p style="font-weight: bold; margin-bottom: 12px; color: #1e3799;">Select the date you r seeing this:</p>
+            
+            <div class="options-group">
+                <label class="option-label">
+                    <input type="radio" name="date_option" value="3/10/26">
+                    3/10/26
+                </label>
+                <label class="option-label">
+                    <input type="radio" name="date_option" value="4/10/26">
+                    4/10/26
+                </label>
+                <label class="option-label">
+                    <input type="radio" name="date_option" value="5/10/26">
+                    5/10/26
+                </label>
+            </div>
+        </div>
+
+        <div class="bottom-left-container">
+            <button class="btn-next" onclick="goToNextPage()">Next ➔</button>
+        </div>
+    </div>
+
+    <script>
+        function goToNextPage() {
+            const selectedOption = document.querySelector('input[name="date_option"]:checked');
+            
+            if (!selectedOption) {
+                alert("Please select a date first!");
+                return;
+            }
+
+            if (selectedOption.value === "5/10/26") {
+                window.location.href = "page6.html";
+            } else {
+                window.location.href = "page2.html";
+            }
+        }
+    </script>
+
+</body>
+</html>
